@@ -4,7 +4,7 @@ import com.javanauta.bff_agendador_tarefas.business.DTO.In.EnderecoDTORequest;
 import com.javanauta.bff_agendador_tarefas.business.DTO.In.LoginResquestDTO;
 import com.javanauta.bff_agendador_tarefas.business.DTO.In.TelefoneDTORequest;
 import com.javanauta.bff_agendador_tarefas.business.DTO.In.UsuarioDTORequest;
-import com.javanauta.bff_agendador_tarefas.infrastructure.UsuarioClient;
+import com.javanauta.bff_agendador_tarefas.infrastructure.Client.UsuarioClient;
 
 
 import lombok.RequiredArgsConstructor;
