@@ -1,6 +1,7 @@
 package com.javanauta.bff_agendador_tarefas.business;
 
 
+import com.javanauta.bff_agendador_tarefas.business.DTO.In.TarefasDTORequest;
 import com.javanauta.bff_agendador_tarefas.business.DTO.TarefasDTOResponse;
 import com.javanauta.bff_agendador_tarefas.business.enums.StatusNotificacaoEnum;
 import com.javanauta.bff_agendador_tarefas.infrastructure.Client.TarefasClient;
@@ -17,7 +18,7 @@ public class TarefasService {
 
     private final TarefasClient tarefasClient;
 
-    public TarefasDTOResponse gravarTarefa(String token, TarefasDTOResponse dto){
+    public TarefasDTOResponse gravarTarefa(String token, TarefasDTORequest dto){
 
         return tarefasClient.gravarTarefas(dto,token);
 
@@ -48,7 +49,7 @@ public void deletaTarefaPorId(String id, String token){
 
         }
 
-        public TarefasDTOResponse upadateTarefas(TarefasDTOResponse dto, String id, String token) {
+        public TarefasDTOResponse upadateTarefas(TarefasDTORequest dto, String id, String token) {
             return tarefasClient.upadateTarefas(dto, id, token);
 
         }

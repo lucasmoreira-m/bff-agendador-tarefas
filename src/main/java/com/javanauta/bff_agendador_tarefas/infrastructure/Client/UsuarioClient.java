@@ -1,6 +1,7 @@
 package com.javanauta.bff_agendador_tarefas.infrastructure.Client;
 
 import com.javanauta.bff_agendador_tarefas.business.DTO.In.EnderecoDTORequest;
+import com.javanauta.bff_agendador_tarefas.business.DTO.In.LoginResquestDTO;
 import com.javanauta.bff_agendador_tarefas.business.DTO.In.TelefoneDTORequest;
 import com.javanauta.bff_agendador_tarefas.business.DTO.In.UsuarioDTORequest;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -19,7 +20,7 @@ UsuarioDTORequest buscarUsuarioPorEmail(@RequestParam("email")String email,
 
 
     @PostMapping("/login")
-     String login(@RequestBody UsuarioDTORequest usuarioDTO);
+     String login(@RequestBody LoginResquestDTO loginDTO);
 
 
     @DeleteMapping("/{email}")

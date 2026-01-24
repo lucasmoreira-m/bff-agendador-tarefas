@@ -83,7 +83,7 @@ public class TarefasController {
     @Operation(summary = "Update de tarefa ", description = "Update de terefas cadastradas ")
     @ApiResponse(responseCode = "200", description = "Tarefas encontradas")
     @ApiResponse(responseCode = "500", description = "Erro de servidor")
-    public ResponseEntity<TarefasDTOResponse> upadateTarefas(@RequestBody TarefasDTOResponse dto, @RequestParam("id")String id,
+    public ResponseEntity<TarefasDTOResponse> upadateTarefas(@RequestBody TarefasDTORequest dto, @RequestParam("id")String id,
                                                              @RequestHeader(name="Authorization",required = false)String token){
         return ResponseEntity.ok(tarefasService.upadateTarefas(dto,id,token));
     }

@@ -32,9 +32,9 @@ public class UsuarioService {
         return client.buscarUsuarioPorEmail(email,token);
 
     }
-    public UsuarioDTORequest deletaUsuarioPorEmail(String email, String token){
+    public void deletaUsuarioPorEmail(String email, String token){
 
-        return deletaUsuarioPorEmail(email,token);
+         deletaUsuarioPorEmail(email,token);
 
     }
     public UsuarioDTORequest atualizaDadosUsuario(String token, UsuarioDTORequest dto){
