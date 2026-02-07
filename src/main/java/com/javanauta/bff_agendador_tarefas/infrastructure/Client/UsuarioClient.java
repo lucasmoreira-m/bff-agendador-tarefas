@@ -4,7 +4,9 @@ import com.javanauta.bff_agendador_tarefas.business.DTO.In.EnderecoDTORequest;
 import com.javanauta.bff_agendador_tarefas.business.DTO.In.LoginResquestDTO;
 import com.javanauta.bff_agendador_tarefas.business.DTO.In.TelefoneDTORequest;
 import com.javanauta.bff_agendador_tarefas.business.DTO.In.UsuarioDTORequest;
+import com.javanauta.bff_agendador_tarefas.business.DTO.Out.ViaCepDTOResponse;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -57,6 +59,10 @@ UsuarioDTORequest buscarUsuarioPorEmail(@RequestParam("email")String email,
     @PutMapping("/telefone")
     TelefoneDTORequest cadastraTelefone(@RequestBody TelefoneDTORequest dto,
                                         @RequestHeader("Authorization") String token);
+
+    @GetMapping("/endereco/{cep}")
+    ViaCepDTOResponse buscarDadosCep(@PathVariable("cep") String cep);
 }
+
 
 
