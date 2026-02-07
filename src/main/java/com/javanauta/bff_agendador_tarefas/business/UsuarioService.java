@@ -4,6 +4,7 @@ import com.javanauta.bff_agendador_tarefas.business.DTO.In.EnderecoDTORequest;
 import com.javanauta.bff_agendador_tarefas.business.DTO.In.LoginResquestDTO;
 import com.javanauta.bff_agendador_tarefas.business.DTO.In.TelefoneDTORequest;
 import com.javanauta.bff_agendador_tarefas.business.DTO.In.UsuarioDTORequest;
+import com.javanauta.bff_agendador_tarefas.business.DTO.Out.ViaCepDTOResponse;
 import com.javanauta.bff_agendador_tarefas.infrastructure.Client.UsuarioClient;
 
 
@@ -62,6 +63,10 @@ public class UsuarioService {
 
     public TelefoneDTORequest cadastraTelefone(String token, TelefoneDTORequest dto){
         return client.cadastraTelefone(dto, token);
+    }
+
+    public ViaCepDTOResponse buscarEnderecoPorCep (String cep){
+        return client.buscarDadosCep(cep);
     }
 
 }

@@ -13,18 +13,23 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<String> handleResourceNotFoundException(ResourceNotFoundException ex){
+    public ResponseEntity<String> handleResourceNotFoundException(ResourceNotFoundException ex) {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
     }
 
-    @ExceptionHandler( conflictException.class)
-    public ResponseEntity<String> handleConflictException(conflictException ex){
-        return new ResponseEntity<>(ex.getMessage(),HttpStatus.CONFLICT);
+    @ExceptionHandler(conflictException.class)
+    public ResponseEntity<String> handleConflictException(conflictException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.CONFLICT);
     }
 
-    @ExceptionHandler( UnauthorizedException.class)
-    public ResponseEntity<String> handleUnauthorizeException(conflictException ex){
-        return new ResponseEntity<>(ex.getMessage(),HttpStatus.UNAUTHORIZED);
+    @ExceptionHandler(UnauthorizedException.class)
+    public ResponseEntity<String> handleUnauthorizeException(conflictException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.UNAUTHORIZED);
     }
 
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<String> handleIllegalArgumentException(IllegalArgumentException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+
+    }
 }
